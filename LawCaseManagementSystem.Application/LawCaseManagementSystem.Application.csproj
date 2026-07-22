@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="../LawCaseManagementSystem.Domain/LawCaseManagementSystem.Domain.csproj" />
+    <ProjectReference Include="../LawCaseManagementSystem.Shared/LawCaseManagementSystem.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

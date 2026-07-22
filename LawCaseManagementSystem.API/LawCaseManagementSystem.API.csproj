@@ -11,4 +11,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="../LawCaseManagementSystem.Application/LawCaseManagementSystem.Application.csproj" />
+    <ProjectReference Include="../LawCaseManagementSystem.Infrastructure/LawCaseManagementSystem.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
