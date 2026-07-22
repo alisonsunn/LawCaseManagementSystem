@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../LawCaseManagementSystem.Application/LawCaseManagementSystem.Application.csproj" />
+    <ProjectReference Include="../LawCaseManagementSystem.Domain/LawCaseManagementSystem.Domain.csproj" />
+    <ProjectReference Include="../LawCaseManagementSystem.Shared/LawCaseManagementSystem.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
