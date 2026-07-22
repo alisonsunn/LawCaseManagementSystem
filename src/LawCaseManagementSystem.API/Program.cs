@@ -11,5 +11,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// testing API and swagger
+app.MapGet("/health", () =>
+{
+    return Results.Ok(new
+    {
+        status = "Healthy"
+    });
+});
+
 app.Run();
 

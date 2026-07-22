@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawCaseManagementSystem.Application", "LawCaseManagementSystem.Application\LawCaseManagementSystem.Application.csproj", "{F0116898-762B-4064-8E04-0746DF98019F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawCaseManagementSystem.Application", "src\LawCaseManagementSystem.Application\LawCaseManagementSystem.Application.csproj", "{F0116898-762B-4064-8E04-0746DF98019F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawCaseManagementSystem.Domain", "LawCaseManagementSystem.Domain\LawCaseManagementSystem.Domain.csproj", "{B2A260B6-5B34-4875-A798-C23B0A84ADC4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawCaseManagementSystem.Domain", "src\LawCaseManagementSystem.Domain\LawCaseManagementSystem.Domain.csproj", "{B2A260B6-5B34-4875-A798-C23B0A84ADC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawCaseManagementSystem.Shared", "LawCaseManagementSystem.Shared\LawCaseManagementSystem.Shared.csproj", "{FA253088-35A0-446A-B3CB-5305ABFFE201}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawCaseManagementSystem.Shared", "src\LawCaseManagementSystem.Shared\LawCaseManagementSystem.Shared.csproj", "{FA253088-35A0-446A-B3CB-5305ABFFE201}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawCaseManagementSystem.Infrastructure", "LawCaseManagementSystem.Infrastructure\LawCaseManagementSystem.Infrastructure.csproj", "{2814E032-C450-43AB-BBB3-9132151A7BC3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawCaseManagementSystem.Infrastructure", "src\LawCaseManagementSystem.Infrastructure\LawCaseManagementSystem.Infrastructure.csproj", "{2814E032-C450-43AB-BBB3-9132151A7BC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawCaseManagementSystem.API", "LawCaseManagementSystem.API\LawCaseManagementSystem.API.csproj", "{E355315E-35CD-4FEF-84B0-40E5ECFF4AED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawCaseManagementSystem.API", "src\LawCaseManagementSystem.API\LawCaseManagementSystem.API.csproj", "{E355315E-35CD-4FEF-84B0-40E5ECFF4AED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
