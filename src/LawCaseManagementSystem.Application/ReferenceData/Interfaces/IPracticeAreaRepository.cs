@@ -1,8 +1,8 @@
-using System;
+using LawCaseManagementSystem.Domain.Entities.ReferenceData;
 
-namespace LawCaseManagementSystem.Application.ReferenceData.Interfaces;
+namespace LawCaseManagementSystem.Application.ReferenceData;
 
-public class IPracticeAreaRepository
+public interface IPracticeAreaRepository
 {
-
+    Task<List<PracticeArea>> GetPracticeAreas();
 }

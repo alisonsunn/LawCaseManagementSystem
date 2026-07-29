@@ -1,6 +1,6 @@
 using LawCaseManagementSystem.Application.ReferenceData.DTOs;
 
-namespace LawCaseManagementSystem.Application.ReferenceData.Services;
+namespace LawCaseManagementSystem.Application.ReferenceData.Interfaces;
 
 public interface IPracticeAreaService
 {

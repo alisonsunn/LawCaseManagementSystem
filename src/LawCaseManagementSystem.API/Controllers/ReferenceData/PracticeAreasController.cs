@@ -1,5 +1,5 @@
 using LawCaseManagementSystem.Application.ReferenceData.DTOs;
-using LawCaseManagementSystem.Application.ReferenceData.Services;
+using LawCaseManagementSystem.Application.ReferenceData.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LawCaseManagementSystem.API.Controllers.ReferenceData;

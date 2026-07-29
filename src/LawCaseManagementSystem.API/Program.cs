@@ -1,4 +1,7 @@
 using LawCaseManagementSystem.Infrastructure;
+using LawCaseManagementSystem.Application.ReferenceData.Interfaces;
+using LawCaseManagementSystem.Application.ReferenceData.Services;
+using LawCaseManagementSystem.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +14,10 @@ builder.Services.AddDbContext<LawFirmDbContext>(options =>
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddControllers();
+
+builder.Services.AddScoped<IPracticeAreaService, PracticeAreaService>();
+builder.Services.AddScoped<IPracticeAreaRepository, PracticeAreaRepository>();
 
 var app = builder.Build();
 

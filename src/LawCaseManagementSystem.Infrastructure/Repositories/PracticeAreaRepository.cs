@@ -1,8 +1,8 @@
 using LawCaseManagementSystem.Domain.Entities.ReferenceData;
 using Microsoft.EntityFrameworkCore;
-using LawCaseManagementSystem.Application.ReferenceData.Repositories;
+using LawCaseManagementSystem.Application.ReferenceData.Interfaces;
 
-namespace LawCaseManagementSystem.Infrastructure.ReferenceData;
+namespace LawCaseManagementSystem.Infrastructure.Repositories;
 
 public class PracticeAreaRepository : IPracticeAreaRepository
 {

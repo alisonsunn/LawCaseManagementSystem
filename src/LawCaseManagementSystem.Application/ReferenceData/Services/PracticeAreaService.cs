@@ -1,5 +1,5 @@
 using LawCaseManagementSystem.Application.ReferenceData.DTOs;
-using LawCaseManagementSystem.Application.ReferenceData.Repositories;
+using LawCaseManagementSystem.Application.ReferenceData.Interfaces;
 
 namespace LawCaseManagementSystem.Application.ReferenceData.Services;
 
