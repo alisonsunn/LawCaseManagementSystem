@@ -11,4 +11,9 @@
     <ProjectReference Include="../LawCaseManagementSystem.Shared/LawCaseManagementSystem.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ReferenceData/DTOs/" />
+    <Folder Include="ReferenceData/Services/" />
+  </ItemGroup>
+
 </Project>
