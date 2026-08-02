@@ -1,5 +1,6 @@
 using LawCaseManagementSystem.Application.ReferenceData.DTOs;
 using LawCaseManagementSystem.Application.ReferenceData.Interfaces;
+using LawCaseManagementSystem.Domain.Entities.ReferenceData;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LawCaseManagementSystem.API.Controllers.ReferenceData;
@@ -16,20 +17,23 @@ public class PracticeAreasController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<List<ReferenceDataDto>>> GetPracticeAreas(
-        [FromQuery] bool includeInactive = false)
+    public async Task<ActionResult<List<ReferenceDataDto>>> GetPracticeAreas()
     {
-        var practiceAreas = await _practiceAreaService.GetPracticeAreas(includeInactive);
+        var practiceAreas = await _practiceAreaService.GetPracticeAreas();
         return Ok(practiceAreas);
     }
 
     [HttpPost]
-    public async Task<ActionResult<ReferenceDataDto>> CreatePracticeArea(CreateReferenceDataDto createReferenceDataDto)
+    public async Task<ActionResult<ReferenceDataDto>> CreatePracticeArea(CreateReferenceDataDto dto)
     {
         try
         {
-            var result = await _practiceAreaService.CreatePracticeArea(createReferenceDataDto);
-            return CreatedAtAction(nameof(GetPracticeAreaById), new { id = result.Id }, result);
+            var result = await _practiceAreaService.CreatePracticeArea(dto);
+
+            return CreatedAtAction(
+                nameof(GetPracticeAreaById),
+                new { id = result.Id },
+                result);
         }
         catch (InvalidOperationException ex)
         {
@@ -49,19 +53,14 @@ public class PracticeAreasController : ControllerBase
     }
 
     [HttpPut("{id:guid}")]
-    public async Task<ActionResult<ReferenceDataDto>> UpdatePracticeArea(
-        Guid id,
-        UpdateReferenceDataDto updateReferenceDataDto)
+    public async Task<ActionResult<ReferenceDataDto>> UpdatePracticeArea(Guid id, UpdateReferenceDataDto dto)
     {
         try
         {
-            var result = await _practiceAreaService.UpdatePracticeArea(id, updateReferenceDataDto);
-            if (result is null)
-            {
-                return NotFound();
-            }
+            var result =
+                await _practiceAreaService.UpdatePracticeArea(id, dto);
 
-            return Ok(result);
+            return result is null ? NotFound() : Ok(result);
         }
         catch (InvalidOperationException ex)
         {
@@ -72,14 +71,19 @@ public class PracticeAreasController : ControllerBase
     [HttpPatch("{id:guid}/activate")]
     public async Task<IActionResult> ActivatePracticeArea(Guid id)
     {
-        var result = await _practiceAreaService.SetPracticeAreaActive(id, true);
-        return result ? NoContent() : NotFound();
+        var success =
+            await _practiceAreaService.SetPracticeAreaActive(id, true);
+
+        return success ? NoContent() : NotFound();
     }
 
     [HttpPatch("{id:guid}/deactivate")]
     public async Task<IActionResult> DeactivatePracticeArea(Guid id)
     {
-        var result = await _practiceAreaService.SetPracticeAreaActive(id, false);
-        return result ? NoContent() : NotFound();
+        var success =
+            await _practiceAreaService.SetPracticeAreaActive(id, false);
+
+        return success ? NoContent() : NotFound();
     }
 }
+
