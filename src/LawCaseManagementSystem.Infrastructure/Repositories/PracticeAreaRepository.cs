@@ -13,8 +13,35 @@ public class PracticeAreaRepository : IPracticeAreaRepository
         _dbContext = dbContext;
     }
 
-    public async Task<List<PracticeArea>> GetPracticeAreas()
+    public async Task<List<PracticeArea>> GetPracticeAreas(
+        bool includeInactive = false)
     {
-        return await  _dbContext.PracticeAreas.Where(practiceArea => practiceArea.IsActive).ToListAsync();
+
+        if (!includeInactive)
+        {
+            var result = _dbContext.PracticeAreas.Where(practiceArea => practiceArea.IsActive);
+        }
+
+        return await _dbContext.PracticeAreas
+            .OrderBy(practiceArea => practiceArea.DisplayOrder)
+            .ThenBy(practiceArea => practiceArea.Name)
+            .ToListAsync();
+    }
+
+    public async Task CreatePracticeArea(PracticeArea practiceArea)
+    {
+        await _dbContext.PracticeAreas.AddAsync(practiceArea);
+        await SaveChangesAsync();
+    }
+
+    public async Task<PracticeArea?> GetPracticeAreaById(Guid id)
+    {
+        return await _dbContext.PracticeAreas
+            .FirstOrDefaultAsync(practiceArea => practiceArea.Id == id);
+    }
+
+    public async Task SaveChangesAsync()
+    {
+        await _dbContext.SaveChangesAsync();
     }
 }
