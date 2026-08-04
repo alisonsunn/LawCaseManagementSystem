@@ -71,8 +71,7 @@ public class PracticeAreasController : ControllerBase
     [HttpPatch("{id:guid}/activate")]
     public async Task<IActionResult> ActivatePracticeArea(Guid id)
     {
-        var success =
-            await _practiceAreaService.SetPracticeAreaActive(id, true);
+        var success = await _practiceAreaService.SetPracticeAreaActive(id, true);
 
         return success ? NoContent() : NotFound();
     }
