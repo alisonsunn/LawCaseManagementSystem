@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <Folder Include="ReferenceData/DTOs/" />
-    <Folder Include="ReferenceData/Services/" />
   </ItemGroup>
 
 </Project>

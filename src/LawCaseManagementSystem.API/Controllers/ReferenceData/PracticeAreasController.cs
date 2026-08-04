@@ -9,17 +9,17 @@ namespace LawCaseManagementSystem.API.Controllers.ReferenceData;
 [Route("api/reference-data/practice-areas")]
 public class PracticeAreasController : ControllerBase
 {
-    private readonly IPracticeAreaService _practiceAreaService;
+    private readonly IReferenceDataService<PracticeArea> _service;
 
-    public PracticeAreasController(IPracticeAreaService practiceAreaService)
+    public PracticeAreasController(IReferenceDataService<PracticeArea> service)
     {
-        _practiceAreaService = practiceAreaService;
+        _service = service;
     }
 
     [HttpGet]
-    public async Task<ActionResult<List<ReferenceDataDto>>> GetPracticeAreas()
+    public async Task<ActionResult<List<ReferenceDataDto>>> GetPracticeAreas(bool includeInactive)
     {
-        var practiceAreas = await _practiceAreaService.GetPracticeAreas();
+        var practiceAreas = await _service.GetAll(includeInactive);
         return Ok(practiceAreas);
     }
 
@@ -28,7 +28,7 @@ public class PracticeAreasController : ControllerBase
     {
         try
         {
-            var result = await _practiceAreaService.CreatePracticeArea(dto);
+            var result = await _service.CreateAsync(dto);
 
             return CreatedAtAction(
                 nameof(GetPracticeAreaById),
