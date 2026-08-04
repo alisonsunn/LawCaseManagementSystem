@@ -6,8 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace LawCaseManagementSystem.API.Controllers.ReferenceData;
 
 [ApiController]
-public abstract class ReferenceDataControllerBase<TEntity> : ControllerBase
-    where TEntity : ReferenceDataEntity
+public abstract class ReferenceDataControllerBase<TEntity> : ControllerBase where TEntity : ReferenceDataEntity
 {
     private readonly IReferenceDataService<TEntity> _service;
 

@@ -8,8 +8,7 @@ public class ReferenceDataService<TEntity>: IReferenceDataService<TEntity> where
 {
     private readonly IReferenceDataRepository<TEntity> _repository;
 
-    public ReferenceDataService(
-        IReferenceDataRepository<TEntity> repository)
+    public ReferenceDataService(IReferenceDataRepository<TEntity> repository)
     {
         _repository = repository;
     }

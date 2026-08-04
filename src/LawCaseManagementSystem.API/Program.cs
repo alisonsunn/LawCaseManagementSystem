@@ -17,8 +17,13 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 
-builder.Services.AddScoped<IPracticeAreaService, PracticeAreaService>();
-builder.Services.AddScoped<IPracticeAreaRepository, PracticeAreaRepository>();
+builder.Services.AddScoped(
+    typeof(IReferenceDataRepository<>),
+    typeof(ReferenceDataRepository<>));
+
+builder.Services.AddScoped(
+    typeof(IReferenceDataService<>),
+    typeof(ReferenceDataService<>));
 
 var app = builder.Build();
 
